@@ -1,4 +1,4 @@
-import Card from '../Card/Card';
+import Card from "./Singular/Card.jsx";
 import styles from "./Cards.module.css"
 
 export default function Cards(props) {
@@ -8,9 +8,10 @@ export default function Cards(props) {
     {props.characters.map((pj) => (
       <Card
          key={pj.id}// para que react no de error porque los elementos no tengan una keys
+         id= {pj.id}
          name={pj.name}
          species={pj.species}
-         onClose={() => window.alert("Emulation")}
+         onClose={props.onClose}
          gender={pj.gender}
          status={pj.status}
          image={pj.image}
